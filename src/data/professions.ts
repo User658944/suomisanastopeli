@@ -1,0 +1,515 @@
+// src/data/professions.ts
+import type { Word } from "./types";
+
+export const professions: Word[] = [
+  // BEGINNER (2 tavua, ei ä/ö)
+  { fi: "kokki", en: "cook", category: "professions", difficulty: "beginner" },
+  {
+    fi: "kuski",
+    en: "driver",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "pappi",
+    en: "priest",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  { fi: "vahti", en: "guard", category: "professions", difficulty: "beginner" },
+  {
+    fi: "maalari",
+    en: "painter",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua → poistettava jos täysin tiukka
+  { fi: "seppä", en: "smith", category: "professions", difficulty: "beginner" },
+  {
+    fi: "kutoja",
+    en: "weaver",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "laulaja",
+    en: "singer",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "soittaja",
+    en: "musician",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "myyjä",
+    en: "seller",
+    category: "professions",
+    difficulty: "beginner",
+  }, // ilman ä
+  {
+    fi: "jakelija",
+    en: "distributor",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "siivoja",
+    en: "cleaner",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "ompelija",
+    en: "seamstress",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 4 tavua
+  {
+    fi: "hioja",
+    en: "polisher",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "leipoja",
+    en: "baker",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "juontaja",
+    en: "host",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "kirurgi",
+    en: "surgeon",
+    category: "professions",
+    difficulty: "beginner",
+  }, // 3 tavua
+  {
+    fi: "pappi",
+    en: "priest",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "sorvari",
+    en: "turner",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "taksin kuljettaja",
+    en: "taxi driver",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "huolto",
+    en: "maintenance",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "korjaaja",
+    en: "repairer",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "myyjä",
+    en: "seller",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "pakkaaja",
+    en: "packer",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "johtaja",
+    en: "manager",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "parturi",
+    en: "barber",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "talonmies",
+    en: "janitor",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  { fi: "boss", en: "pomo", category: "professions", difficulty: "beginner" },
+  {
+    fi: "palvelija",
+    en: "servant",
+    category: "professions",
+    difficulty: "beginner",
+  },
+  {
+    fi: "lastaaja",
+    en: "loader",
+    category: "professions",
+    difficulty: "beginner",
+  },
+
+  // MEDIUM
+  {
+    fi: "postin jakaja",
+    en: "mail man",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "kätilö",
+    en: "midwife",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "lääkäri",
+    en: "doctor",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "työntekijä",
+    en: "worker",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "esiintyjä",
+    en: "performer",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "päällikkö",
+    en: "chief",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "kääntäjä",
+    en: "translator",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "räätäli",
+    en: "tailor",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "järjestäjä",
+    en: "organizer",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "työnvalvoja",
+    en: "supervisor",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "kirjanpitäjä",
+    en: "accountant",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "seppä",
+    en: "blacksmith",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "putkimies",
+    en: "plumber",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "rakennusmies",
+    en: "construction man",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "mekaanikko",
+    en: "mechanic",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "viimeistelijä",
+    en: "finisher",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "eläinlääkäri",
+    en: "veterinarian",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "maanviljelijä",
+    en: "farmer",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "renki",
+    en: "hired man",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "yötyöntekijä",
+    en: "night worker",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "päivätyöntekijä",
+    en: "day worker",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "lasten hoitaja",
+    en: "nanny",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "vierailija",
+    en: "visitor",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "toimitusjohtaja",
+    en: "managing director",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "siivooja",
+    en: "cleaner",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "operaattori",
+    en: "operator",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "sihteeri",
+    en: "secretary",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "komentaja",
+    en: "commander",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "sähkömies",
+    en: "electrician",
+    category: "professions",
+    difficulty: "medium",
+  },
+  {
+    fi: "vartija",
+    en: "security quard",
+    category: "professions",
+    difficulty: "medium",
+  },
+
+  // HARD (yli 2 tavua)
+  {
+    fi: "opettaja",
+    en: "teacher",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "puuseppä",
+    en: "carpenter",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "poliisi",
+    en: "police officer",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "sairaanhoitaja",
+    en: "nurse",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "kuljettaja",
+    en: "driver",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "kirjailija",
+    en: "writer",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "taiteilija",
+    en: "artist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "rakentaja",
+    en: "builder",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "insinööri",
+    en: "engineer",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "arkkitehti",
+    en: "architect",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "hammaslääkäri",
+    en: "dentist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "farmaseutti",
+    en: "pharmacist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "toimittaja",
+    en: "journalist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "valokuvaaja",
+    en: "photographer",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "ohjelmoija",
+    en: "programmer",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "sähköasentaja",
+    en: "electrician",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "yksityisyrittäjä",
+    en: "private entrepreneur",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "palomies",
+    en: "firefighter",
+    category: "professions",
+    difficulty: "hard",
+  },
+  { fi: "lakimies", en: "lawyer", category: "professions", difficulty: "hard" },
+  { fi: "tuomari", en: "judge", category: "professions", difficulty: "hard" },
+  {
+    fi: "anestesiologi",
+    en: "anesthesiologist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "radiologi",
+    en: "radiologist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "fyysikko",
+    en: "physicist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  { fi: "kemisti", en: "chemist", category: "professions", difficulty: "hard" },
+  {
+    fi: "geologi",
+    en: "geologist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "ekonomisti",
+    en: "economist",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "kääntäjä",
+    en: "translator",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "tilintarkastaja",
+    en: "auditor",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "lentokoneasentaja",
+    en: "aircraft mechanic",
+    category: "professions",
+    difficulty: "hard",
+  },
+  {
+    fi: "pelisuunnittelija",
+    en: "game designer",
+    category: "professions",
+    difficulty: "hard",
+  },
+];
