@@ -57,7 +57,7 @@ export default function Menu() {
             {/* Sisältö päälle */}
             <div className="relative z-10">
               <h1 className="sm:text-2xl md:text-3xl py-4 font-semibold text-blue-400">
-                Learn Finnish Games
+                Learn Finnish Words
               </h1>
             </div>
 
