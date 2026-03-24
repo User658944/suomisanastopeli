@@ -19,7 +19,7 @@
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  --handwriting: "Caveat", cursive;
+  --handwriting: "Patrick Hand", cursive;
 
   font: 18px/145% var(--handwriting);
   letter-spacing: 0.18px;
