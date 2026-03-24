@@ -1,6 +1,6 @@
 import type { Word } from "./types";
 
-export const socialMedia: Word[] = [
+export const some: Word[] = [
   // BEGINNER (20)
   {
     fi: "some",
