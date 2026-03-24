@@ -107,13 +107,13 @@ export default function Result() {
 
                         <div className="flex gap-2">
                           {result && !result.correct && (
-                            <span className="line-through text-red-400">
+                            <span className="line-through text-red-400 text-left">
                               {result.input}
                             </span>
                           )}
 
                           {result && (
-                            <span>
+                            <span className="text-gray-200 text-left">
                               {direction === "fi-en" ? word.en : word.fi}
                             </span>
                           )}

@@ -56,7 +56,8 @@ export default function Game() {
   const question = direction === "fi-en" ? current.fi : current.en;
 
   const handleNext = () => {
-    const isCorrect = input.toLowerCase() === correct.toLowerCase();
+    const isCorrect =
+      input.trim().toLowerCase() === correct.trim().toLowerCase();
 
     const updatedResults = [...results];
 
@@ -69,7 +70,6 @@ export default function Game() {
     setResults(updatedResults);
     setLastAnsweredIndex(index);
 
-    // pisteet johdetaan suoraan datasta
     const updatedScore = updatedResults.filter((r) => r?.correct).length;
 
     if (isLast) {
@@ -170,20 +170,20 @@ export default function Game() {
                                   : "bg-white/10 text-white/50"
                           }`}
                         >
-                          <div className="flex flex-col items-start h-10">
-                            <span className="leading-tight">
+                          <div className="flex flex-col items-start w-full">
+                            <span className="leading-tight w-full text-left">
                               {direction === "fi-en" ? word.fi : word.en}
                             </span>
 
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 w-full">
                               {result && !result.correct && (
-                                <span className="line-through text-red-400 leading-tight">
+                                <span className="line-through text-red-400 leading-none text-left">
                                   {result.input}
                                 </span>
                               )}
 
                               {result && (
-                                <span className="leading-none">
+                                <span className="leading-none text-gray-200 text-left">
                                   {direction === "fi-en" ? word.en : word.fi}
                                 </span>
                               )}
