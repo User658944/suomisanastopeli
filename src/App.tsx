@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./pages/Menu";
-import Game from "./pages/Game";
+import MenuWords from "./pages/MenuWords";
+import MenuSentences from "./pages/MenuSentences";
+import GameWords from "./pages/GameWords";
+// import GameSentences from "./pages/GameSentences";
 import Result from "./pages/Result";
 
 export default function App() {
@@ -8,7 +11,10 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Menu />} />
-        <Route path="/game" element={<Game />} />
+        <Route path="/menuwords" element={<MenuWords />} />
+        <Route path="/menusentences" element={<MenuSentences />} />
+        <Route path="/gamewords" element={<GameWords />} />
+        {/* <Route path="/gamesentences" element={<GameSentences />} /> */}
         <Route path="/result" element={<Result />} />
       </Routes>
     </BrowserRouter>

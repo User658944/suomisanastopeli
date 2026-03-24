@@ -1,4 +1,5 @@
 /* index.css */
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -18,7 +19,9 @@
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
+  --handwriting: "Caveat", cursive;
+
+  font: 18px/145% var(--handwriting);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -78,7 +81,7 @@ h2 {
 }
 
 h1 {
-  /* font-size: 56px; */
+  font-size: 56px;
   letter-spacing: -1.68px;
   /* margin: 32px 0; */
   @media (max-width: 1024px) {
@@ -128,4 +131,8 @@ code {
 
 .logo-shadow {
   filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.7));
+}
+
+.bg-suomi {
+  background-color: #003580;
 }
