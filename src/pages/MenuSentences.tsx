@@ -1,8 +1,6 @@
 // src/pages/MenuSentences.tsx
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useResults } from "../context/ResultContext";
-import { ScoreChart } from "../components/ScoreChartDiagram";
 import Footer from "../components/Footer";
 import lfg from "/lfg.png";
 
@@ -12,35 +10,6 @@ export default function MenuSentences() {
   const [direction, setDirection] = useState("en-fi");
   const [category, setCategory] = useState("animals");
   const [difficulty, setDifficulty] = useState("beginner");
-  const { attempts } = useResults();
-
-  const weakWords = Object.entries(
-    attempts
-      .flatMap((a) =>
-        a.results.map((r, i) => ({
-          word: a.words[i],
-          correct: r.correct,
-        })),
-      )
-      .reduce((acc: Record<string, { total: number; wrong: number }>, curr) => {
-        const key = `${curr.word.fi}-${curr.word.en}`;
-
-        if (!acc[key]) {
-          acc[key] = { total: 0, wrong: 0 };
-        }
-
-        acc[key].total += 1;
-        if (!curr.correct) acc[key].wrong += 1;
-
-        return acc;
-      }, {}),
-  )
-    .map(([key, value]) => ({
-      word: key,
-      ...value,
-    }))
-    .filter((w) => w.wrong > 0 && w.wrong > w.total / 2)
-    .sort((a, b) => b.wrong - a.wrong);
 
   return (
     <div className="relative min-h-screen text-white flex flex-col justify-center items-center px-4">
