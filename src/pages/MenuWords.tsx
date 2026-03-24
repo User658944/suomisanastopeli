@@ -112,10 +112,17 @@ export default function MenuWords() {
               {[
                 "animals",
                 "food",
+                "clothes",
                 "objects",
                 "professions",
                 "vehicles",
                 "directions",
+                "time",
+                "colors",
+                "school",
+                "home",
+                "traffic",
+                "some",
               ].map((opt) => {
                 const active = category === opt;
 

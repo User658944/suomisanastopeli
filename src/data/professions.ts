@@ -2,14 +2,8 @@
 import type { Word } from "./types";
 
 export const professions: Word[] = [
-  // BEGINNER (2 tavua, ei ä/ö)
+  // BEGINNER
   { fi: "kokki", en: "cook", category: "professions", difficulty: "beginner" },
-  {
-    fi: "kuski",
-    en: "driver",
-    category: "professions",
-    difficulty: "beginner",
-  },
   {
     fi: "pappi",
     en: "priest",
@@ -22,50 +16,37 @@ export const professions: Word[] = [
     en: "painter",
     category: "professions",
     difficulty: "beginner",
-  }, // 3 tavua → poistettava jos täysin tiukka
-  { fi: "seppä", en: "smith", category: "professions", difficulty: "beginner" },
+  },
   {
     fi: "kutoja",
     en: "weaver",
     category: "professions",
     difficulty: "beginner",
-  }, // 3 tavua
+  },
   {
     fi: "laulaja",
     en: "singer",
     category: "professions",
     difficulty: "beginner",
-  }, // 3 tavua
+  },
   {
     fi: "soittaja",
     en: "musician",
     category: "professions",
     difficulty: "beginner",
-  }, // 3 tavua
-  {
-    fi: "myyjä",
-    en: "seller",
-    category: "professions",
-    difficulty: "beginner",
-  }, // ilman ä
+  },
   {
     fi: "jakelija",
     en: "distributor",
     category: "professions",
     difficulty: "beginner",
-  }, // 3 tavua
-  {
-    fi: "siivoja",
-    en: "cleaner",
-    category: "professions",
-    difficulty: "beginner",
-  }, // 3 tavua
+  },
   {
     fi: "ompelija",
     en: "seamstress",
     category: "professions",
     difficulty: "beginner",
-  }, // 4 tavua
+  },
   {
     fi: "hioja",
     en: "polisher",
@@ -77,7 +58,7 @@ export const professions: Word[] = [
     en: "baker",
     category: "professions",
     difficulty: "beginner",
-  }, // 3 tavua
+  },
   {
     fi: "juontaja",
     en: "host",
@@ -87,12 +68,6 @@ export const professions: Word[] = [
   {
     fi: "kirurgi",
     en: "surgeon",
-    category: "professions",
-    difficulty: "beginner",
-  }, // 3 tavua
-  {
-    fi: "pappi",
-    en: "priest",
     category: "professions",
     difficulty: "beginner",
   },
@@ -105,12 +80,6 @@ export const professions: Word[] = [
   {
     fi: "taksin kuljettaja",
     en: "taxi driver",
-    category: "professions",
-    difficulty: "beginner",
-  },
-  {
-    fi: "huolto",
-    en: "maintenance",
     category: "professions",
     difficulty: "beginner",
   },
@@ -150,7 +119,7 @@ export const professions: Word[] = [
     category: "professions",
     difficulty: "beginner",
   },
-  { fi: "boss", en: "pomo", category: "professions", difficulty: "beginner" },
+  { fi: "pomo", en: "boss", category: "professions", difficulty: "beginner" },
   {
     fi: "palvelija",
     en: "servant",
@@ -166,8 +135,8 @@ export const professions: Word[] = [
 
   // MEDIUM
   {
-    fi: "postin jakaja",
-    en: "mail man",
+    fi: "postinjakaja",
+    en: "mail carrier",
     category: "professions",
     difficulty: "medium",
   },
@@ -198,12 +167,6 @@ export const professions: Word[] = [
   {
     fi: "päällikkö",
     en: "chief",
-    category: "professions",
-    difficulty: "medium",
-  },
-  {
-    fi: "kääntäjä",
-    en: "translator",
     category: "professions",
     difficulty: "medium",
   },
@@ -245,7 +208,7 @@ export const professions: Word[] = [
   },
   {
     fi: "rakennusmies",
-    en: "construction man",
+    en: "construction worker",
     category: "professions",
     difficulty: "medium",
   },
@@ -275,7 +238,7 @@ export const professions: Word[] = [
   },
   {
     fi: "renki",
-    en: "hired man",
+    en: "farmhand",
     category: "professions",
     difficulty: "medium",
   },
@@ -292,20 +255,14 @@ export const professions: Word[] = [
     difficulty: "medium",
   },
   {
-    fi: "lasten hoitaja",
+    fi: "lastenhoitaja",
     en: "nanny",
     category: "professions",
     difficulty: "medium",
   },
   {
-    fi: "vierailija",
-    en: "visitor",
-    category: "professions",
-    difficulty: "medium",
-  },
-  {
     fi: "toimitusjohtaja",
-    en: "managing director",
+    en: "ceo",
     category: "professions",
     difficulty: "medium",
   },
@@ -341,12 +298,12 @@ export const professions: Word[] = [
   },
   {
     fi: "vartija",
-    en: "security quard",
+    en: "security guard",
     category: "professions",
     difficulty: "medium",
   },
 
-  // HARD (yli 2 tavua)
+  // HARD
   {
     fi: "opettaja",
     en: "teacher",
@@ -438,14 +395,8 @@ export const professions: Word[] = [
     difficulty: "hard",
   },
   {
-    fi: "sähköasentaja",
-    en: "electrician",
-    category: "professions",
-    difficulty: "hard",
-  },
-  {
     fi: "yksityisyrittäjä",
-    en: "private entrepreneur",
+    en: "entrepreneur",
     category: "professions",
     difficulty: "hard",
   },

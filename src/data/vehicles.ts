@@ -1,7 +1,7 @@
 import type { Word } from "./types";
 
 export const vehicles: Word[] = [
-  // BEGINNER (30)
+  // BEGINNER
   { fi: "auto", en: "car", category: "vehicles", difficulty: "beginner" },
   { fi: "pyörä", en: "bike", category: "vehicles", difficulty: "beginner" },
   { fi: "bussi", en: "bus", category: "vehicles", difficulty: "beginner" },
@@ -28,16 +28,9 @@ export const vehicles: Word[] = [
     difficulty: "beginner",
   },
   { fi: "rekka", en: "truck", category: "vehicles", difficulty: "beginner" },
-  { fi: "juna", en: "train", category: "vehicles", difficulty: "beginner" },
   { fi: "taksi", en: "taxi", category: "vehicles", difficulty: "beginner" },
   { fi: "metro", en: "metro", category: "vehicles", difficulty: "beginner" },
   { fi: "ratikka", en: "tram", category: "vehicles", difficulty: "beginner" },
-  {
-    fi: "skootteri",
-    en: "scooter",
-    category: "vehicles",
-    difficulty: "beginner",
-  },
   {
     fi: "veturi",
     en: "locomotive",
@@ -51,17 +44,16 @@ export const vehicles: Word[] = [
     difficulty: "beginner",
   },
   { fi: "vaunu", en: "carriage", category: "vehicles", difficulty: "beginner" },
-  { fi: "rattaat", en: "cart", category: "vehicles", difficulty: "beginner" },
+  {
+    fi: "rattaat",
+    en: "stroller",
+    category: "vehicles",
+    difficulty: "beginner",
+  },
   { fi: "kelkka", en: "sled", category: "vehicles", difficulty: "beginner" },
   {
     fi: "pakettiauto",
     en: "van",
-    category: "vehicles",
-    difficulty: "beginner",
-  },
-  {
-    fi: "kilpuri",
-    en: "race car",
     category: "vehicles",
     difficulty: "beginner",
   },
@@ -98,7 +90,7 @@ export const vehicles: Word[] = [
     difficulty: "beginner",
   },
 
-  // MEDIUM (30)
+  // MEDIUM
   {
     fi: "sähköauto",
     en: "electric car",
@@ -126,7 +118,7 @@ export const vehicles: Word[] = [
   },
   {
     fi: "kaivinkone",
-    en: "digger",
+    en: "excavator",
     category: "vehicles",
     difficulty: "medium",
   },
@@ -150,7 +142,7 @@ export const vehicles: Word[] = [
   },
   {
     fi: "hinausauto",
-    en: "tow vehicle",
+    en: "tow truck",
     category: "vehicles",
     difficulty: "medium",
   },
@@ -212,7 +204,6 @@ export const vehicles: Word[] = [
     category: "vehicles",
     difficulty: "medium",
   },
-  { fi: "ohjus", en: "missile", category: "vehicles", difficulty: "medium" },
   {
     fi: "pelastusvene",
     en: "lifeboat",
@@ -225,22 +216,16 @@ export const vehicles: Word[] = [
     category: "vehicles",
     difficulty: "medium",
   },
-  {
-    fi: "työkone",
-    en: "construction machine",
-    category: "vehicles",
-    difficulty: "medium",
-  },
   { fi: "tankki", en: "tank", category: "vehicles", difficulty: "medium" },
   {
     fi: "vartioauto",
-    en: "security car",
+    en: "security vehicle",
     category: "vehicles",
     difficulty: "medium",
   },
   { fi: "ajoneuvo", en: "vehicle", category: "vehicles", difficulty: "medium" },
 
-  // HARD (30)
+  // HARD
   {
     fi: "lentotukialus",
     en: "aircraft carrier",
@@ -286,18 +271,6 @@ export const vehicles: Word[] = [
     difficulty: "hard",
   },
   {
-    fi: "hyötyajoneuvo",
-    en: "utility vehicle",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
-    fi: "kaivosteollisuuden ajoneuvo",
-    en: "mining vehicle",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
     fi: "sähkömoottoripyörä",
     en: "electric motorcycle",
     category: "vehicles",
@@ -305,19 +278,13 @@ export const vehicles: Word[] = [
   },
   {
     fi: "puoliperävaunu",
-    en: "semi-trailer",
+    en: "semi trailer",
     category: "vehicles",
     difficulty: "hard",
   },
   {
-    fi: "lavetti",
-    en: "flatbed trailer",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
-    fi: "jäämurtaja",
-    en: "icebreaker",
+    fi: "perävaunu",
+    en: "trailer",
     category: "vehicles",
     difficulty: "hard",
   },
@@ -335,12 +302,6 @@ export const vehicles: Word[] = [
     difficulty: "hard",
   },
   {
-    fi: "robottiauto",
-    en: "autonomous car",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
     fi: "sähkökäyttöinen ajoneuvo",
     en: "electric vehicle",
     category: "vehicles",
@@ -353,32 +314,8 @@ export const vehicles: Word[] = [
     difficulty: "hard",
   },
   {
-    fi: "raitiovaunujärjestelmä",
-    en: "tram system",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
     fi: "kiskoajoneuvo",
     en: "rail vehicle",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
-    fi: "junayksikkö",
-    en: "train set",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
-    fi: "veturiyksikkö",
-    en: "engine unit",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
-    fi: "työkäyttöinen drone",
-    en: "industrial drone",
     category: "vehicles",
     difficulty: "hard",
   },
@@ -397,12 +334,6 @@ export const vehicles: Word[] = [
   {
     fi: "jäänmurtaja",
     en: "icebreaker",
-    category: "vehicles",
-    difficulty: "hard",
-  },
-  {
-    fi: "hinausrahtialus",
-    en: "tugboat",
     category: "vehicles",
     difficulty: "hard",
   },

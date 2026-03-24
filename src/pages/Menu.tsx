@@ -55,7 +55,7 @@ export default function Menu() {
       />
 
       <div className="w-full max-w-md flex flex-col gap-4 mt-2">
-        <div className="flex flex-col rounded-2xl p-4 space-y-3">
+        <div className="flex flex-col rounded-2xl pt-4 space-y-3">
           <div className="white-shadow w-full max-w-md flex flex-col gap-6 p-2 mb-14 bg-blue-50/5 rounded-2xl relative">
             {/* Taustakuva */}
             <img
@@ -117,7 +117,7 @@ export default function Menu() {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-md mt-12 bg-blue-700 border rounded-2xl p-2">
+        <div className="w-11/12 max-w-xs sm:max-w-sm mt-12 mx-auto bg-blue-900/70 border border-gray-500 rounded-2xl p-2">
           <h2 className="text-lg sm:text-xl font-semibold text-white">
             Tervetuloa pelaamaan!
           </h2>
@@ -184,7 +184,7 @@ export default function Menu() {
           </div>
         )}
         {weakWords.length > 0 && (
-          <div className="w-full max-w-md flex flex-col my-24 bg-white/10 p-4 rounded-2xl">
+          <div className="w-full max-w-md flex flex-col my-24 bg-blue-900/70 border border-gray-500  p-4 rounded-2xl">
             <h2 className="font-semibold">Harjoittele näitä</h2>
             <p className="text-orange-300 text-sm">Practice these</p>
             <br />

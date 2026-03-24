@@ -1,5 +1,5 @@
+// src/data/objects.ts
 import type { Word } from "./types";
-
 export const objects: Word[] = [
   // BEGINNER
   { fi: "tuoli", en: "chair", category: "objects", difficulty: "beginner" },
@@ -15,17 +15,9 @@ export const objects: Word[] = [
   { fi: "rasia", en: "box", category: "objects", difficulty: "beginner" },
   { fi: "kori", en: "basket", category: "objects", difficulty: "beginner" },
   { fi: "laukku", en: "bag", category: "objects", difficulty: "beginner" },
-  { fi: "hattu", en: "hat", category: "objects", difficulty: "beginner" },
-  { fi: "takki", en: "coat", category: "objects", difficulty: "beginner" },
-  { fi: "paita", en: "shirt", category: "objects", difficulty: "beginner" },
-  { fi: "housu", en: "pants", category: "objects", difficulty: "beginner" },
-  { fi: "sukka", en: "sock", category: "objects", difficulty: "beginner" },
-  { fi: "kenkä", en: "shoe", category: "objects", difficulty: "beginner" },
   { fi: "veitsi", en: "knife", category: "objects", difficulty: "beginner" },
   { fi: "lanka", en: "thread", category: "objects", difficulty: "beginner" },
   { fi: "kaide", en: "railing", category: "objects", difficulty: "beginner" },
-  { fi: "ovi", en: "door", category: "objects", difficulty: "beginner" },
-  { fi: "lippalakki", en: "cap", category: "objects", difficulty: "beginner" },
   { fi: "sanko", en: "bucket", category: "objects", difficulty: "beginner" },
   { fi: "harja", en: "brush", category: "objects", difficulty: "beginner" },
   {
@@ -45,35 +37,21 @@ export const objects: Word[] = [
   { fi: "tyyny", en: "pillow", category: "objects", difficulty: "medium" },
   { fi: "peili", en: "mirror", category: "objects", difficulty: "medium" },
   { fi: "kaappi", en: "cabinet", category: "objects", difficulty: "medium" },
-  { fi: "ämpäri", en: "bucket", category: "objects", difficulty: "medium" },
-  {
-    fi: "pieni ämpäri",
-    en: "small bucket",
-    category: "objects",
-    difficulty: "medium",
-  },
-  { fi: "pötkö", en: "rod", category: "objects", difficulty: "medium" },
+  { fi: "ämpäri", en: "pail", category: "objects", difficulty: "medium" },
   { fi: "köysi", en: "rope", category: "objects", difficulty: "medium" },
   { fi: "pyörä", en: "wheel", category: "objects", difficulty: "medium" },
   { fi: "kärry", en: "cart", category: "objects", difficulty: "medium" },
   { fi: "hylly", en: "shelf", category: "objects", difficulty: "medium" },
-  { fi: "räsy", en: "rag", category: "objects", difficulty: "medium" },
-  { fi: "pöly", en: "dust", category: "objects", difficulty: "medium" },
-  { fi: "näyttö", en: "display", category: "objects", difficulty: "medium" },
+  { fi: "näyttö", en: "screen", category: "objects", difficulty: "medium" },
   { fi: "kytkin", en: "switch", category: "objects", difficulty: "medium" },
   { fi: "säiliö", en: "container", category: "objects", difficulty: "medium" },
-  { fi: "räikkä", en: "ratchet", category: "objects", difficulty: "medium" },
-  { fi: "kärki", en: "tip", category: "objects", difficulty: "medium" },
-  { fi: "pääty", en: "end", category: "objects", difficulty: "medium" },
-  { fi: "kyhmy", en: "lump", category: "objects", difficulty: "medium" },
-  { fi: "pölkky", en: "log", category: "objects", difficulty: "medium" },
-  { fi: "näppäin", en: "button", category: "objects", difficulty: "medium" },
-  { fi: "säle", en: "slat", category: "objects", difficulty: "medium" },
-  { fi: "käämi", en: "coil", category: "objects", difficulty: "medium" },
-  { fi: "teroitin", en: "grinder", category: "objects", difficulty: "medium" },
-  { fi: "taso", en: "level", category: "objects", difficulty: "medium" },
-  { fi: "lötkö", en: "soft object", category: "objects", difficulty: "medium" },
-  { fi: "hylsy", en: "socket", category: "objects", difficulty: "medium" },
+  { fi: "näppäin", en: "key", category: "objects", difficulty: "medium" },
+  {
+    fi: "teroitin",
+    en: "sharpener",
+    category: "objects",
+    difficulty: "medium",
+  },
 
   // HARD
   { fi: "ikkuna", en: "window", category: "objects", difficulty: "hard" },
@@ -136,12 +114,7 @@ export const objects: Word[] = [
     category: "objects",
     difficulty: "hard",
   },
-  {
-    fi: "sähköpistoke",
-    en: "power socket",
-    category: "objects",
-    difficulty: "hard",
-  },
+  { fi: "pistorasia", en: "socket", category: "objects", difficulty: "hard" },
   {
     fi: "kaukosäädin",
     en: "remote control",
@@ -185,18 +158,8 @@ export const objects: Word[] = [
     category: "objects",
     difficulty: "hard",
   },
-  {
-    fi: "läppäri",
-    en: "laptop",
-    category: "objects",
-    difficulty: "hard",
-  },
-  {
-    fi: "tabletti",
-    en: "tablet",
-    category: "objects",
-    difficulty: "hard",
-  },
+  { fi: "läppäri", en: "laptop", category: "objects", difficulty: "hard" },
+  { fi: "tabletti", en: "tablet", category: "objects", difficulty: "hard" },
   {
     fi: "digitaalikamera",
     en: "digital camera",
@@ -215,10 +178,5 @@ export const objects: Word[] = [
     category: "objects",
     difficulty: "hard",
   },
-  {
-    fi: "sähkökitaravahvistin",
-    en: "guitar amplifier",
-    category: "objects",
-    difficulty: "hard",
-  },
+  { fi: "vahvistin", en: "amplifier", category: "objects", difficulty: "hard" },
 ];
