@@ -37,15 +37,25 @@ export default function MenuWords() {
               backgroundPosition: "left",
             }}
           />
-          <div>
-            <h1 className="p-2">Tervetuloa pelaamaan!</h1>
-            <p className="text-orange-300 text-sm">Welcome to play!</p>
+          <div className="white-shadow w-full max-w-md flex flex-col gap-6 p-2 mb-14 bg-blue-50/5 rounded-2xl relative">
+            <img
+              src={lfg}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover blur-md scale-80"
+            />
+
+            <div className="relative z-10">
+              <h1 className="font-semibold">Sanat</h1>
+              <p className="text-orange-300 text-2xl">Words</p>
+            </div>
+
+            <img
+              src={lfg}
+              alt="Learn Finnish Games Logo"
+              className="logo-shadow w-22 h-22 object-contain absolute right-2 bottom-0 translate-y-4/5"
+            />
           </div>
 
-          <div>
-            <h2 className="m-0">Sanat</h2>
-            <p className="text-orange-300 text-sm">Words</p>
-          </div>
           {/* GRID */}
           <div className="grid grid-cols-2 gap-4">
             {/* Kielisuunta */}

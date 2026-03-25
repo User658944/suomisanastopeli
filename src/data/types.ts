@@ -6,4 +6,6 @@ export type Word = {
   en: string;
   category: string;
   difficulty: Difficulty;
+  options_fi?: string[];
+  options_en?: string[];
 };

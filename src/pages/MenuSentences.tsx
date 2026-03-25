@@ -1,20 +1,42 @@
 // src/pages/MenuSentences.tsx
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import Footer from "../components/Footer";
 import lfg from "/lfg.png";
+import { useEffect, useState } from "react";
 
 export default function MenuSentences() {
   const navigate = useNavigate();
 
   const [direction, setDirection] = useState("en-fi");
-  const [category, setCategory] = useState("animals");
+  const [category, setCategory] = useState("animalsdo");
   const [difficulty, setDifficulty] = useState("beginner");
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffset(window.scrollY * 0.3);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="relative min-h-screen text-white flex flex-col justify-center items-center px-4">
       <div className="w-full max-w-md flex flex-col gap-4 mt-2">
-        <div className="flex flex-col bg-white/5 rounded-2xl p-4 space-y-3">
+        <div className="white-shadow w-full max-w-md flex flex-col gap-6 p-4 mb-14 bg-suomi rounded-2xl relative">
+          <div
+            className="fixed inset-0 -z-10 blur-sm"
+            style={{
+              transform: `translateY(${-offset}px) scale(1.4)`,
+              backgroundImage: `
+                linear-gradient(rgba(0, 40, 120, 0.8), rgba(0, 40, 120, 0.8)),
+                url(${lfg})
+                `,
+              backgroundSize: "cover",
+              backgroundPosition: "left",
+            }}
+          />
           <div className="white-shadow w-full max-w-md flex flex-col gap-6 p-2 mb-14 bg-blue-50/5 rounded-2xl relative">
             <img
               src={lfg}
@@ -23,9 +45,8 @@ export default function MenuSentences() {
             />
 
             <div className="relative z-10">
-              <h1 className="sm:text-2xl md:text-3xl py-4 font-semibold text-blue-400">
-                Learn Finnish Words
-              </h1>
+              <h1 className="font-semibold">Lauseet</h1>
+              <p className="text-orange-300 text-2xl">Sentences</p>
             </div>
 
             <img
@@ -35,12 +56,9 @@ export default function MenuSentences() {
             />
           </div>
 
-          <div>
-            <h2 className="m-0">Valitse peli</h2>
-            <p className="text-orange-300 text-sm">select a game</p>
-          </div>
-
+          {/* GRID */}
           <div className="grid grid-cols-2 gap-4">
+            {/* Kielisuunta */}
             <div className="bg-white/5 rounded-xl p-4 space-y-3">
               <p className="font-semibold">Kielisuunta</p>
               <p className="text-orange-300 text-sm">Language</p>
@@ -69,6 +87,7 @@ export default function MenuSentences() {
               </div>
             </div>
 
+            {/* Aihealue */}
             <div className="bg-white/5 rounded-xl p-4 space-y-3">
               <p className="font-semibold">Vaikeustaso</p>
               <p className="text-orange-300 text-sm">Difficulty</p>
@@ -95,41 +114,38 @@ export default function MenuSentences() {
             </div>
           </div>
 
+          {/* Vaikeustaso (täys leveys) */}
           <div className="bg-white/5 rounded-xl p-4 space-y-3 backdrop-blur-sm w-full">
             <p className="font-semibold">Aihealue</p>
             <p className="text-orange-300 text-sm">Category</p>
             <div className="grid grid-cols-3 gap-3 mt-2">
               {[
-                "animals",
-                "food",
-                "objects",
-                "professions",
-                "vehicles",
-                "directions",
+                { value: "animalsdo", label: "Animals Do" },
+                // { value: "tulossa", label: "Tulossa" },
               ].map((opt) => {
-                const active = category === opt;
+                const active = category === opt.value;
 
                 return (
                   <button
-                    key={opt}
-                    onClick={() => setCategory(opt)}
+                    key={opt.value}
+                    onClick={() => setCategory(opt.value)}
                     className={`p-2 rounded-full text-sm border transition-all ${
                       active
                         ? "bg-blue-600 text-white shadow-lg scale-110"
                         : "bg-white/10 text-white/70"
                     }`}
                   >
-                    {opt.charAt(0).toUpperCase() + opt.slice(1)}
+                    {opt.label}
                   </button>
                 );
               })}
             </div>
           </div>
-
+          {/* Aloitus */}
           <div className="p-4 flex items-center justify-center backdrop-blur-sm">
             <button
               onClick={() =>
-                navigate("/gamewords", {
+                navigate("/gamesentences", {
                   state: { direction, difficulty, category },
                 })
               }
@@ -140,6 +156,31 @@ export default function MenuSentences() {
             </button>
           </div>
         </div>
+      </div>
+      <div className="w-70 gap-4">
+        <button
+          onClick={() => navigate("/")}
+          className="bg-white/10 p-2 rounded border border-white/20"
+        >
+          <span className="block font-bold">Poistu</span>
+          <span className="block text-xs text-orange-300">Exit</span>
+        </button>
+      </div>
+      <div className="w-full max-w-md mt-12">
+        <p className="text-white text-sm mt-3">
+          Learn Finnish Videos YouTube kanava on saanut kaverin.
+        </p>
+        <p className="text-orange-300 text-xs">
+          The Learn Finnish Videos YouTube channel has got a companion.
+        </p>
+        <p className="text-white text-sm">
+          Harjoittele suomi–englanti sanastoa valitsemalla oikeat vastaukset
+          valitsemistasi aihealueista ja vaikeustasoista.
+        </p>
+        <p className="text-orange-300 text-xs">
+          Practice Finnish–English vocabulary by selecting the correct answers
+          from your selected categories and difficulty levels.
+        </p>
       </div>
 
       <Footer />

@@ -21,7 +21,7 @@ export default function Result() {
   return (
     <MotionWrapper>
       <div className="min-h-screen text-white flex flex-col items-center gap-6 w-full max-w-xl mx-auto px-4">
-        <div className="grid grid-cols-3 gap-4 w-full max-w-xl mx-auto mt-8 px-4">
+        <div className="flex justify-between gap-4 w-full max-w-xl mx-auto mt-8 px-4">
           {/* Tulos */}
           <div className="backdrop-blur-sm">
             <h1 className="text-3xl font-semibold">Tulos</h1>
@@ -29,23 +29,8 @@ export default function Result() {
           </div>
 
           <button
-            onClick={() =>
-              navigate("/game", {
-                state: {
-                  direction,
-                  difficulty,
-                  category,
-                },
-              })
-            }
-            className="bg-blue-600 py-3 rounded-full w-full border"
-          >
-            <span className="block font-bold">Pelaa uudestaan</span>
-            <span className="block text-xs text-orange-300">Play again</span>
-          </button>
-          <button
             onClick={() => navigate("/")}
-            className="bg-accent py-3 rounded-full w-full border"
+            className="bg-white/10 p-2 rounded border border-white/20 w-20"
           >
             <span className="block font-bold">Poistu</span>
             <span className="block text-xs text-orange-300">Exit</span>

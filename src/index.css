@@ -77,7 +77,7 @@ h2 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
-  margin: 0 !important;
+  margin: 2px !important;
 }
 
 h1 {

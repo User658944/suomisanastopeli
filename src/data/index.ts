@@ -13,6 +13,9 @@ import { home } from "./home";
 import { traffic } from "./traffic";
 import { some } from "./some";
 
+// lauseet
+import { animalsdo } from "./animalsdo";
+
 export const allWords = [
   ...animals,
   ...food,
@@ -27,4 +30,7 @@ export const allWords = [
   ...home,
   ...traffic,
   ...some,
+
+  // lauseet
+  ...animalsdo,
 ];

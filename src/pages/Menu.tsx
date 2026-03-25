@@ -86,38 +86,30 @@ export default function Menu() {
               className="bg-white/5 rounded-xl p-4 space-y-3 cursor-pointer white-shadow text-left bg-suomi"
               onClick={() => navigate("/menuwords")}
             >
-              <p className="font-semibold">Sanat</p>
+              <p className="font-semiboldn text-3xl">Sanat</p>
               <p className="text-orange-300 text-sm">Words</p>
               <div className="bg-white/5 rounded-xl p-2 mt-2 space-y-3 cursor-pointer">
-                <p className="text-white text-sm">
-                  Harjoittele suomi–englanti sanastoa.
-                </p>
-                <p className="text-orange-300 text-xs">
-                  Practice Finnish–English vocabulary.
-                </p>
+                <p className="text-white text-sm">Harjoittele sanastoa</p>
+                <p className="text-orange-300 text-xs">Practice vocabulary</p>
               </div>
             </div>
             <div
               className="bg-white/5 rounded-xl p-4 space-y-3 cursor-pointer white-shadow text-left bg-suomi"
-              // onClick={() => navigate("/menusentences")}
+              onClick={() => navigate("/menusentences")}
             >
-              <p className="font-semibold">Lauseet</p>
+              <p className="font-semibold text-3xl">Lauseet</p>
               <p className="text-orange-300 text-sm">Sentences</p>
               <div className="bg-white/5 rounded-xl p-2 mt-2 space-y-3 cursor-pointer">
-                <div className=" bg-gray-500 text-gray-200 text-2xl px-2 py-1 rounded-2xl">
+                {/* <div className=" bg-gray-500 text-gray-200 text-2xl px-2 py-1 rounded-2xl">
                   Tulossa
-                </div>
-                {/* <p className="text-white text-sm">
-                  Harjoittele suomi–englanti lauseita.
-                </p>
-                <p className="text-orange-300 text-xs">
-                  Practice Finnish–English sentences.
-                </p> */}
+                </div> */}
+                <p className="text-white text-sm">Harjoittele lauseita</p>
+                <p className="text-orange-300 text-xs">Practice sentences</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-11/12 max-w-xs sm:max-w-sm mt-12 mx-auto bg-blue-900/70 border border-gray-500 rounded-2xl p-2">
+        <div className="w-11/12 max-w-xs sm:max-w-sm mt-24 mx-auto bg-blue-900/70 border border-gray-500 rounded-2xl p-2">
           <h2 className="text-lg sm:text-xl font-semibold text-white">
             Tervetuloa pelaamaan!
           </h2>

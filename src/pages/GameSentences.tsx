@@ -1,4 +1,4 @@
-// src/pages/GameWords.tsx
+// src/pages/GameSentences.tsx
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { allWords } from "../data";
@@ -7,18 +7,26 @@ import MotionWrapper from "../components/MotionWrapper";
 import { useResults } from "../context/ResultContext";
 import Footer from "../components/Footer";
 
-export default function GameWords() {
+export default function GameSentences() {
   const { state } = useLocation();
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const difficulty = state?.difficulty ?? "beginner";
-  const category = state?.category ?? "animals";
+  const category = state?.category ?? "animalsdo";
 
   const filtered = useMemo(() => {
-    return allWords.filter(
-      (w) => w.difficulty === difficulty && w.category === category,
-    );
+    return allWords.filter((w) => {
+      const hasOptions =
+        Array.isArray(w.options_fi) &&
+        w.options_fi.length > 0 &&
+        Array.isArray(w.options_en) &&
+        w.options_en.length > 0;
+
+      return (
+        w.difficulty === difficulty && w.category === category && hasOptions
+      );
+    });
   }, [difficulty, category]);
 
   const gameWords = useMemo(() => {
@@ -38,58 +46,88 @@ export default function GameWords() {
     answered: boolean;
   };
 
-  // EI null-arvoja
   const [results, setResults] = useState<Result[]>([]);
-
   const { index, current, next, isLast } = useGame(gameWords);
   const { addAttempt } = useResults();
-  const [input, setInput] = useState("");
+
+  const [selected, setSelected] = useState<string | null>(null);
   const [lastAnsweredIndex, setLastAnsweredIndex] = useState<number | null>(
     null,
   );
 
-  if (!current) return null;
+  if (!current) {
+    return <div className="text-white p-4">No data</div>;
+  }
 
   const direction = state?.direction ?? "en-fi";
 
   const correct = direction === "fi-en" ? current.en : current.fi;
   const question = direction === "fi-en" ? current.fi : current.en;
 
-  const handleNext = () => {
+  const options = useMemo(() => {
+    const base =
+      direction === "fi-en" ? current.options_en! : current.options_fi!;
+
+    const shuffled = [...base];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+  }, [current, direction]);
+
+  const handleAnswer = (option: string) => {
+    if (results[index]?.answered) return;
+
     const isCorrect =
-      input.trim().toLowerCase() === correct.trim().toLowerCase();
+      option.trim().toLowerCase() === correct.trim().toLowerCase();
 
     const updatedResults = [...results];
 
     updatedResults[index] = {
       correct: isCorrect,
-      input,
+      input: option,
       answered: true,
     };
 
     setResults(updatedResults);
+    setSelected(option);
     setLastAnsweredIndex(index);
 
     const updatedScore = updatedResults.filter((r) => r?.correct).length;
 
-    if (isLast) {
-      addAttempt({
-        score: updatedScore,
-        results: updatedResults,
-        words: gameWords,
-        direction,
-        category,
-        difficulty,
-        createdAt: Date.now(),
-      });
+    setTimeout(() => {
+      if (isLast) {
+        addAttempt({
+          score: updatedScore,
+          results: updatedResults,
+          words: gameWords,
+          direction,
+          category,
+          difficulty,
+          createdAt: Date.now(),
+        });
 
-      navigate("/result");
-      return;
-    }
+        navigate("/result");
+        return;
+      }
 
-    next();
-    setInput("");
+      next();
+      setSelected(null);
+    }, 2400);
   };
+
+  useEffect(() => {
+    setResults(
+      Array.from({ length: gameWords.length }, () => ({
+        correct: false,
+        input: "",
+        answered: false,
+      })),
+    );
+  }, [gameWords]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -103,16 +141,6 @@ export default function GameWords() {
       });
     }
   }, [index]);
-
-  useEffect(() => {
-    setResults(
-      Array.from({ length: gameWords.length }, () => ({
-        correct: false,
-        input: "",
-        answered: false,
-      })),
-    );
-  }, [gameWords]);
 
   useEffect(() => {
     if (!containerRef.current || lastAnsweredIndex === null) return;
@@ -158,7 +186,7 @@ export default function GameWords() {
                       return (
                         <li
                           key={i}
-                          className={`px-2 py-1 rounded flex items-center justify-between snap-center transition-all ${
+                          className={`px-2 py-1 rounded flex items-start justify-between snap-center transition-all ${
                             isActive ? "border" : ""
                           } ${
                             result?.correct
@@ -170,29 +198,27 @@ export default function GameWords() {
                                   : "bg-white/10 text-white/50"
                           }`}
                         >
-                          <div className="flex flex-col items-start w-full">
-                            <span className="leading-tight w-full text-left">
+                          <div className="flex flex-col items-start w-full text-left">
+                            <span className="leading-none w-full text-left">
                               {direction === "fi-en" ? word.fi : word.en}
                             </span>
 
-                            <div className="flex gap-2 w-full">
-                              {result && !result.correct && (
-                                <span className="line-through text-red-400 leading-none text-left">
+                            <div className="flex gap-2 w-full items-start">
+                              {!result.correct && (
+                                <span className="line-through text-red-400 leading-none ">
                                   {result.input}
                                 </span>
                               )}
 
-                              {result && (
-                                <span className="leading-none text-gray-200 text-left">
-                                  {direction === "fi-en" ? word.en : word.fi}
-                                </span>
-                              )}
+                              <span className="text-gray-200 leading-none ">
+                                {direction === "fi-en" ? word.en : word.fi}
+                              </span>
                             </div>
                           </div>
 
                           <span>
                             {result?.correct && "✔️"}
-                            {result && !result.correct && "❌"}
+                            {!result?.correct && "❌"}
                           </span>
                         </li>
                       );
@@ -204,43 +230,47 @@ export default function GameWords() {
           </div>
         </div>
 
-        <p className="text-5xl font-semibold text-white">{question}</p>
+        <p className="text-3xl md:text-4xl font-semibold text-center">
+          {question}
+        </p>
 
-        <div className="space-y-2 w-full">
-          <div>
-            <p className="text-white">Sinun vastauksesi</p>
-            <p className="text-accent text-sm text-orange-300">Your answer</p>
-          </div>
+        <div className="w-full grid grid-cols-2 gap-2 px-4">
+          {options.map((opt, i) => {
+            const isAnswered = results[index]?.answered;
+            const isCorrect = opt === correct;
+            const isSelected = selected === opt;
 
-          <input
-            className="w-full p-2 rounded text-black bg-white"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") handleNext();
-            }}
-          />
+            return (
+              <button
+                key={i}
+                onClick={() => handleAnswer(opt)}
+                disabled={isAnswered}
+                className={`p-4 m-2 rounded text-left leading-none transition ${
+                  isAnswered
+                    ? isCorrect
+                      ? "bg-green-500"
+                      : isSelected
+                        ? "bg-red-500"
+                        : "bg-white/10"
+                    : "bg-white/10 hover:bg-white/20"
+                }`}
+              >
+                {opt}
+              </button>
+            );
+          })}
         </div>
+
+        <div className="h-20" />
 
         <button
-          onClick={handleNext}
-          className="bg-accent px-6 my-6 py-3 rounded-full w-full border"
+          onClick={() => navigate("/")}
+          className="bg-white/10 p-2 rounded border border-white/20"
         >
-          <span className="block text-white font-bold">Vastaa</span>
-          <span className="block text-xs text-orange-300">Answer</span>
+          <span className="block font-bold">Poistu</span>
+          <span className="block text-xs text-orange-300">Exit</span>
         </button>
 
-        <div className="h-50"></div>
-
-        <div className="w-70 gap-4">
-          <button
-            onClick={() => navigate("/")}
-            className="bg-white/10 p-2 rounded border border-white/20"
-          >
-            <span className="block font-bold">Poistu</span>
-            <span className="block text-xs text-orange-300">Exit</span>
-          </button>
-        </div>
         <Footer />
       </div>
     </MotionWrapper>

@@ -1,3 +1,4 @@
+// src/hooks/useGame.ts
 import { useState } from "react";
 import type { Word } from "../data/types";
 
