@@ -2,7 +2,7 @@ import lfg from "/lfg.png";
 export { YoutubeLink };
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 py-6 text-sm text-white/60">
+    <div className="flex flex-col items-center justify-center gap-2 pb-6 pt-48 text-sm text-white/60">
       <div className="flex items-center gap-4">
         <div className="relative w-8 h-5 bg-white">
           <div className="absolute left-[33%] top-0 w-[16%] h-full bg-blue-800" />

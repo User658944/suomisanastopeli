@@ -85,7 +85,6 @@ export default function GameSentences() {
       option.trim().toLowerCase() === correct.trim().toLowerCase();
 
     const updatedResults = [...results];
-
     updatedResults[index] = {
       correct: isCorrect,
       input: option,
@@ -95,28 +94,6 @@ export default function GameSentences() {
     setResults(updatedResults);
     setSelected(option);
     setLastAnsweredIndex(index);
-
-    const updatedScore = updatedResults.filter((r) => r?.correct).length;
-
-    setTimeout(() => {
-      if (isLast) {
-        addAttempt({
-          score: updatedScore,
-          results: updatedResults,
-          words: gameWords,
-          direction,
-          category,
-          difficulty,
-          createdAt: Date.now(),
-        });
-
-        navigate("/result");
-        return;
-      }
-
-      next();
-      setSelected(null);
-    }, 2400);
   };
 
   useEffect(() => {
@@ -159,11 +136,42 @@ export default function GameSentences() {
   return (
     <MotionWrapper>
       <div className="min-h-screen text-white flex flex-col items-center gap-2 w-full max-w-xl mx-auto px-4">
-        <div className="flex w-full justify-between gap-6">
+        <div className="flex w-full justify-between gap-4">
           <div className="flex flex-col items-start w-1/3 pt-2 text-blue-200">
             <span className="text-sm">{direction}</span>
             <span className="text-sm">{difficulty}</span>
             <span className="text-xl font-bold">{category}</span>
+            {results[index]?.answered && !isLast && (
+              <button
+                onClick={() => {
+                  next();
+                  setSelected(null);
+                }}
+                className="bg-blue-600 text-white text-2xl px-8 py-5 rounded mt-12"
+              >
+                Next
+              </button>
+            )}
+            {results[index]?.answered && isLast && (
+              <button
+                onClick={() => {
+                  const updatedScore = results.filter((r) => r.correct).length;
+                  addAttempt({
+                    score: updatedScore,
+                    results,
+                    words: gameWords,
+                    direction,
+                    category,
+                    difficulty,
+                    createdAt: Date.now(),
+                  });
+                  navigate("/result");
+                }}
+                className="bg-blue-600 text-white text-2xl px-8 py-5 rounded mt-12"
+              >
+                Next
+              </button>
+            )}
           </div>
 
           <div className="w-2/3">
