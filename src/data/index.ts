@@ -15,6 +15,9 @@ import { some } from "./some";
 
 // lauseet
 import { animalsdo } from "./animalsdo";
+import { intraffic } from "./intraffic";
+import { atschool } from "./atschool";
+import { atwork } from "./atwork";
 
 export const allWords = [
   ...animals,
@@ -33,4 +36,7 @@ export const allWords = [
 
   // lauseet
   ...animalsdo,
+  ...intraffic,
+  ...atschool,
+  ...atwork,
 ];

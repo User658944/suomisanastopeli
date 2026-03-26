@@ -120,7 +120,10 @@ export default function MenuSentences() {
             <p className="text-orange-300 text-sm">Category</p>
             <div className="grid grid-cols-3 gap-3 mt-2">
               {[
-                { value: "animalsdo", label: "Animals Do" },
+                { value: "animalsdo", label: "Animals do" },
+                { value: "intraffic", label: "In traffic" },
+                { value: "atschool", label: "At school" },
+                { value: "atwork", label: "At work" },
                 // { value: "tulossa", label: "Tulossa" },
               ].map((opt) => {
                 const active = category === opt.value;

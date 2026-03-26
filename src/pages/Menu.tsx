@@ -83,7 +83,7 @@ export default function Menu() {
           {/* GRID */}
           <div className="grid grid-cols-2 gap-4">
             <div
-              className="bg-white/5 rounded-xl p-4 space-y-3 cursor-pointer white-shadow text-left bg-suomi"
+              className="bg-white/5 rounded-xl p-4 space-y-3 cursor-pointer white-shadow text-left bg-suomi border"
               onClick={() => navigate("/menuwords")}
             >
               <p className="font-semiboldn text-3xl">Sanat</p>
@@ -94,7 +94,7 @@ export default function Menu() {
               </div>
             </div>
             <div
-              className="bg-white/5 rounded-xl p-4 space-y-3 cursor-pointer white-shadow text-left bg-suomi"
+              className="bg-white/5 rounded-xl p-4 space-y-3 cursor-pointer white-shadow text-left bg-suomi border"
               onClick={() => navigate("/menusentences")}
             >
               <p className="font-semibold text-3xl">Lauseet</p>
@@ -109,7 +109,7 @@ export default function Menu() {
             </div>
           </div>
         </div>
-        <div className="w-11/12 max-w-xs sm:max-w-sm mt-24 mx-auto bg-blue-900/70 border border-gray-500 rounded-2xl p-2">
+        <div className="w-11/12 max-w-xs sm:max-w-sm mt-24 mx-auto bg-blue-900/30 rounded-2xl p-2">
           <h2 className="text-lg sm:text-xl font-semibold text-white">
             Tervetuloa pelaamaan!
           </h2>
@@ -132,7 +132,7 @@ export default function Menu() {
             <div className="bg-white/5 rounded-xl p-4 backdrop-blur-sm space-y-2">
               <ul className="space-y-2 overflow-y-auto">
                 {[...attempts]
-                  .slice(-20)
+                  .slice(-10)
                   .reverse()
                   .map((a, i) => {
                     return (
@@ -176,27 +176,29 @@ export default function Menu() {
           </div>
         )}
         {weakWords.length > 0 && (
-          <div className="w-full max-w-md flex flex-col my-24 bg-blue-900/70 border border-gray-500  p-4 rounded-2xl">
+          <div className="w-full max-w-md flex flex-col my-24 bg-blue-900/70 border border-gray-500 p-4 rounded-2xl">
             <h2 className="font-semibold">Harjoittele näitä</h2>
             <p className="text-orange-300 text-sm">Practice these</p>
             <br />
 
             <ul className="w-full bg-white/10 px-4 py-1 rounded-2xl">
-              {weakWords.map((w, i) => {
-                const [fi, en] = w.word.split("-");
+              {weakWords
+                .filter((w) => w.wrong > 1)
+                .map((w, i) => {
+                  const [fi, en] = w.word.split("-");
 
-                return (
-                  <li key={i} className="w-full border-b border-white/20">
-                    <div className="grid grid-cols-[1fr_1fr_auto] items-center w-full">
-                      <span className="text-left">{fi}</span>
-                      <span className="text-left text-white/70">{en}</span>
-                      <span className="text-right text-red-300 text-sm">
-                        {w.wrong} väärin
-                      </span>
-                    </div>
-                  </li>
-                );
-              })}
+                  return (
+                    <li key={i} className="w-full border-b border-white/20">
+                      <div className="grid grid-cols-[1fr_1fr_auto] items-center w-full">
+                        <span className="text-left">{fi}</span>
+                        <span className="text-left text-white/70">{en}</span>
+                        <span className="text-right text-red-300 text-sm">
+                          {w.wrong} väärin
+                        </span>
+                      </div>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         )}

@@ -169,7 +169,7 @@ export default function GameSentences() {
           <div className="w-2/3">
             <div className="w-full my-2">
               <div className="relative">
-                <div className="pointer-events-none absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-blue-900 to-transparent z-10" />
+                <div className="pointer-events-none absolute top-0 left-0 right-0 h-8 bg-linear-to-b from-blue-900 to-transparent z-10" />
 
                 <div
                   ref={containerRef}
@@ -250,7 +250,7 @@ export default function GameSentences() {
                     ? isCorrect
                       ? "bg-green-500"
                       : isSelected
-                        ? "bg-red-500"
+                        ? "border border-red-400"
                         : "bg-white/10"
                     : "bg-white/10 hover:bg-white/20"
                 }`}
@@ -261,7 +261,7 @@ export default function GameSentences() {
           })}
         </div>
 
-        <div className="h-20" />
+        <div className="h-50" />
 
         <button
           onClick={() => navigate("/")}
