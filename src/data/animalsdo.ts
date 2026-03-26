@@ -286,7 +286,7 @@ export const animalsdo: Word[] = [
       "The bird sings in the morning.",
       "The bird is singing in the morning.",
       "The bird sang in the morning.",
-      "The bird sings in mornings.",
+      "The bird sings in the mornings.",
       "The bird chirps in the morning.",
       "The bird makes sounds in the morning.",
     ],
@@ -757,7 +757,7 @@ export const animalsdo: Word[] = [
   },
   {
     fi: "Lintu oli katsellut ympärilleen.",
-    en: "The bird had been looking around.",
+    en: "The bird had looked around.",
     category: "animalsdo",
     difficulty: "hard",
     options_fi: [
@@ -769,11 +769,11 @@ export const animalsdo: Word[] = [
       "Lintu katsoo ympärilleen.",
     ],
     options_en: [
-      "The bird had been looking around.",
+      "The bird had looked around.",
+      "The bird had looking around.",
       "The bird has been looking around.",
       "The bird was looking around.",
       "The bird looks around.",
-      "The bird had looked around.",
       "The bird looks around.",
     ],
   },
